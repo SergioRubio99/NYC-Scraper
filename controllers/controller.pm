@@ -1,7 +1,3 @@
-BEGIN {
-    unshift @INC,'C:\Users\Sergio\Desktop\NYC-SCRAPER\controllers\controller_methods';
-  #@INC is the directory list, where perl searches for .pm files
-}
 
 use strict;
 use warnings;
