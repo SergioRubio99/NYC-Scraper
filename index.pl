@@ -1,5 +1,7 @@
 use Mojolicious::Lite -signatures;
-require Controllers::Main_controller;
 
+get "/:pages" => { pages => 1 } => sub ($c) {
+    # $c -> render(text => "Hello !");
+};
 
 app->start;
