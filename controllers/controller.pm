@@ -12,9 +12,10 @@ sub api ( $c, $name, $pages ) {
     $_ = 1 unless m/^[1-4]$/;
     my @crawled = getPage::getPage();
     say @crawled;
+    say my $ArrRef = \@crawled;
     say $_;
     say "Hey! I'm on the top of the application!";
-    $c->render( json => $_ );
+    $c->render( json => $ArrRef );
 }
 
 return 1;
