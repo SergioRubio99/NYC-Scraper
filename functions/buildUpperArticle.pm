@@ -1,7 +1,7 @@
 package buildUpperArticle;
 use Mojolicious::Lite -signatures;
 use Mojo::DOM;
-require functions::article_functions::buildLowerArticle;
+require functions::buildLowerArticle;
 
 sub buildUpperArticle ($DOM) {
     my $count = 0;
