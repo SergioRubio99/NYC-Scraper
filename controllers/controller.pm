@@ -1,3 +1,7 @@
+BEGIN{
+  unshift @INC,'C:\Users\Sergio\Desktop\NYC-SCRAPER';
+}
+
 use strict;
 use warnings;
 use Mojolicious::Lite -signatures;
