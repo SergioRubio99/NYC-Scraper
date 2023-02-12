@@ -1,8 +1,8 @@
-package buildUpperArticle;
+package getArticle;
 use Mojolicious::Lite -signatures;
 use Mojo::DOM;
 
-sub buildUpperArticle ($DOM) {
+sub getArticle ($DOM) {
     my $count    = 0;
 
     # say "NUMBER, LENGTH OF THE ARTS ARRAY: ";

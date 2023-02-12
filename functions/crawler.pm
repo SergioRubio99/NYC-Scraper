@@ -7,7 +7,7 @@ package crawler;
 use Mojolicious::Lite;
 use Mojo::DOM;
 use Mojo::Base -base;
-use functions::buildUpperArticle;
+use functions::getArticle;
 use functions::getDOM;
 
 sub crawler {
@@ -17,7 +17,7 @@ sub crawler {
 
     my $DOM = getDOM::getDOM();
  
-    my @upperArr = buildUpperArticle::buildUpperArticle($DOM);
+    my @upperArr = getArticle::getArticle($DOM);
     return @upperArr;
 }
 
