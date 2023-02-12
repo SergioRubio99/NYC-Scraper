@@ -7,7 +7,6 @@ sub getDOM {
     my $DOM = Mojo::DOM->new($plain_html);
     # say $DOM;
     # say $DOM->find('a')->map('text')->join("\n");
-      
     return $DOM;
 }
 
