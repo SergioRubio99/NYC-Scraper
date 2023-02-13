@@ -10,6 +10,7 @@ use Mojo::Base -base;
 use functions::getArticle;
 use functions::getDOM;
 
+
 sub crawler {
     # my $object = article_constructor -> emit(1,2);
     # say $object;

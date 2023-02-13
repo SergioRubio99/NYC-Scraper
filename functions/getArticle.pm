@@ -1,6 +1,13 @@
+BEGIN {
+  unshift @INC,'C:\Users\Sergio\Desktop\NYC-SCRAPER';
+}
+
+
 package getArticle;
 use Mojolicious::Lite -signatures;
 use Mojo::DOM;
+use functions::getUser;
+
 
 sub getArticle ($DOM) {
     my $count    = 0;
@@ -17,20 +24,20 @@ sub getArticle ($DOM) {
         $count = $count + 1;
         my $title = $e->at(".titleline")->at("a")->text;
         my $link  = $e->at(".titleline")->at("a")->attr('href');
-        my $user  = $e->next_node->at(".hnuser")->text;
+        my $user  = getUser::getUser($e);
         my $age   = $e->next_node->at(".age")->at("a")->text;
-        my $comments =
-          $e->next_node->at(".age")
-          ->next_node->next_node->next_node->next_node->next_node->next_node
-          ->text;
-        my $score   = $e->next_node->at(".score")->text;
+        # my $comments =
+        #   $e->next_node->at(".age")
+        #   ->next_node->next_node->next_node->next_node->next_node->next_node
+        #   ->text;
+        # my $score   = $e->next_node->at(".score")->text;
         my @artHash = (
             "title"    => $title,
             "user"     => $user,
             "url"      => $link,
             "age"      => $age,
-            "comments" => $comments,
-            "score"    => $score
+            "comments" => 1,
+            "score"    => 1
         );
 
         foreach my $entry ( values @artHash ) {
