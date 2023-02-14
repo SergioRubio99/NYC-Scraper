@@ -12,8 +12,8 @@ use functions::getUser;
 use functions::getComments;
 use functions::getLink;
 use functions::getAge;
-use feature 'unicode_strings';
-use utf8;
+use functions::getScore;
+
 use Encode;
 
 sub crawler {
@@ -24,30 +24,26 @@ sub crawler {
     my $DOM = getDOM::getDOM();
  
 
-    my $count    = 0;
+
 
     # say "NUMBER, LENGTH OF THE ARTS ARRAY: ";
     # say my $lowerArrScalar = @lowerArr;
     my @upperArr = ();
 
-    my $lol = 0;
-
     for my $e ( $DOM->at("#pagespace")->next_node->at("td")->at("table")
         ->find(".athing")->each )
     {
-        $count = $count + 1;
-        my $title = $e->at(".titleline")->at("a")->text;
-        $title = Encode::decode_utf8 $title;
-        my $user  = getUser::getUser($e);
-        my $age   = $e->next_node->at(".age")->at("a")->text;
+       
+        my $title = Encode::decode_utf8 $e->at(".titleline")->at("a")->text;
+ 
         # my $score   = $e->next_node->at(".score")->text;
         my @artHash = (
             "title"    => $title,
-            "user"     => $user,
+            "user"     => getUser::getUser($e),
             "url"      => getLink::getLink($e),
             "age"      => getAge::getAge($e),
             "comments" => getComments::getComments($e),
-            "score"    => 1
+            "score"    => getScore::getScore($e)
         );
 
         foreach my $entry ( values @artHash ) {
