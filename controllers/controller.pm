@@ -12,7 +12,8 @@ package controller;
 sub api ( $c, $name, $pages ) {
     $_ = $pages;
     $_ = 1 unless m/^[1-4]$/;
-    my @crawled = getPage::getPage();
+    
+    my @crawled = getPage::getPage($pages);
     # say @crawled;
     my $ArrRef = \@crawled;
     # say $_;

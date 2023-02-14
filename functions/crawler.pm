@@ -4,7 +4,7 @@ BEGIN {
 
 
 package crawler;
-use Mojolicious::Lite;
+use Mojolicious::Lite -signatures;
 use Mojo::DOM;
 use Mojo::Base -base;
 use functions::getDOM;
@@ -16,15 +16,12 @@ use functions::getScore;
 
 use Encode;
 
-sub crawler {
+sub crawler ($pages) {
     # my $object = article_constructor -> emit(1,2);
     # say $object;
     # say $object -> emit;
 
-    my $DOM = getDOM::getDOM();
- 
-
-
+    my $DOM = getDOM::getDOM($pages);
 
     # say "NUMBER, LENGTH OF THE ARTS ARRAY: ";
     # say my $lowerArrScalar = @lowerArr;
