@@ -28,7 +28,7 @@ sub crawler {
 
     # say "NUMBER, LENGTH OF THE ARTS ARRAY: ";
     # say my $lowerArrScalar = @lowerArr;
-    my @upperArr = ();
+    my @articles_arr = ();
 
     for my $e ( $DOM->at("#pagespace")->next_node->at("td")->at("table")
         ->find(".athing")->each )
@@ -53,10 +53,10 @@ sub crawler {
             # say "";
 
         }
-        push( @upperArr, {@artHash} );
+        push( @articles_arr, {@artHash} );
     }
 
-    return @upperArr;
+    return @articles_arr;
 }
 
 return 1;
