@@ -10,6 +10,7 @@ use Mojo::Base -base;
 use functions::getDOM;
 use functions::getUser;
 use functions::getComments;
+use functions::getLink;
 use feature 'unicode_strings';
 use utf8;
 use Encode;
@@ -43,7 +44,7 @@ sub crawler {
         my @artHash = (
             "title"    => $title,
             "user"     => $user,
-            "url"      => $link,
+            "url"      => getLink::getLink($e),
             "age"      => $age,
             "comments" => getComments::getComments($e),
             "score"    => 1
