@@ -11,6 +11,7 @@ use functions::getDOM;
 use functions::getUser;
 use functions::getComments;
 use functions::getLink;
+use functions::getAge;
 use feature 'unicode_strings';
 use utf8;
 use Encode;
@@ -37,7 +38,6 @@ sub crawler {
         $count = $count + 1;
         my $title = $e->at(".titleline")->at("a")->text;
         $title = Encode::decode_utf8 $title;
-        my $link  = $e->at(".titleline")->at("a")->attr('href');
         my $user  = getUser::getUser($e);
         my $age   = $e->next_node->at(".age")->at("a")->text;
         # my $score   = $e->next_node->at(".score")->text;
@@ -45,7 +45,7 @@ sub crawler {
             "title"    => $title,
             "user"     => $user,
             "url"      => getLink::getLink($e),
-            "age"      => $age,
+            "age"      => getAge::getAge($e),
             "comments" => getComments::getComments($e),
             "score"    => 1
         );

@@ -18,9 +18,9 @@ sub getComments ($html_el) {
         #convert to number:
         return $comments + 0;
     }
-    else {
+
         return 0;
-    }
+
 
 }
 
