@@ -53,7 +53,7 @@ sub crawler ($pages) {
         push( @articles_arr, {@artHash} );
     }
 
-    return @articles_arr;
+    return ["PAGE $pages", @articles_arr];
 }
 
 return 1;

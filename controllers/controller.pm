@@ -16,7 +16,7 @@ sub api ( $c, $name, $pages ) {
   my @crawled = [];
 
   for(my $i = 1; $i <= $pages; $i++){
-     push(@crawled, ("$i PAGE CRAWLED!", getPage::getPage($i)));
+     push(@crawled, getPage::getPage($i));
   }
 
     # say @crawled;
