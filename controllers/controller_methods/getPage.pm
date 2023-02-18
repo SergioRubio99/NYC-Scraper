@@ -1,5 +1,5 @@
 BEGIN{
-  unshift @INC,'C:\Users\Sergio\Desktop\NYC-SCRAPER';
+  unshift @INC,'/home/sergio/NYC-Scraper/';
 }
 
 package getPage;
