@@ -5,7 +5,6 @@ BEGIN {
   #@INC is the directory list, where perl searches for .pm files
 }
 
-  system("rm -r -d functions/cache_storage");
 
 use Mojolicious::Lite -signatures;
 use controllers::controller;
@@ -17,3 +16,7 @@ get "/:pages" => { pages => 1 } => sub ($c) {
 };
 
 app->start;
+
+END {
+  system("rm -r -d functions/cache_storage");
+}
