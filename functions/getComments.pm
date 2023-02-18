@@ -11,14 +11,14 @@ sub getComments ($html_el) {
           $html_el->next_node->at(".age")
           ->next_node->next_node->next_node->next_node->next_node->next_node
           ->text;
-        #eliminate the "comment" word to leave the number:
-        $comments =~ s/\scomments//; 
-        #sometimes the website gives "discuss", when no comments are published yet. We wliminate it:
-        $comments =~ s/discuss//; 
+
+        if(!$comments){
+            return 0;
+        }
+        my ($comments) = $comments =~ /(\d+)\s/;
         #convert to number:
         return $comments + 0;
     }
-
         return 0;
 
 
