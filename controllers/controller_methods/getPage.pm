@@ -9,21 +9,17 @@ use functions::cache;
 use Mojolicious::Lite -signatures;
 
 
-sub getPage ($pages) {
+sub getPage ($page) {
     # my @crawled = crawler::crawler($pages);
-    my @crawled = cache::getArticle($pages);
-    say @crawled;
-    say $crawled[0];
+    my @crawled = cache::getArticle($page);
     if(!defined $crawled[0][0]){
-        say "CRAWLING";
-        @crawled = crawler::crawler($pages);
-        cache::saveArticle($pages, @crawled);
+        say "CRAWLING PAGE $page";
+        @crawled = crawler::crawler($page);
+        cache::saveArticle($page, @crawled);
         return @crawled;
     }
-    my @fromCache = cache::getArticle($pages);
-    say "RETRIEVING FROM THE CACHE";
-    say $fromCache[0][0];
-    say "RETRIEVING FROM THE CACHE";
+    my @fromCache = cache::getArticle($page);
+    say "$fromCache[0][0] RETRIEVED FROM THE CACHE";
     return @crawled;
 }
 

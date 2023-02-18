@@ -13,12 +13,11 @@ sub api ( $c, $name, $pages ) {
     $_ = $pages;
     $_ = 1 unless m/^[1-4]$/;
 
-  my @crawled = [];
+  my @crawled;
 
   for(my $i = 1; $i <= $pages; $i++){
      push(@crawled, getPage::getPage($i));
   }
-
     # say @crawled;
     my $ArrRef = \@crawled;
     # say $_;
