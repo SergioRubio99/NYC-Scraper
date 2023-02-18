@@ -5,7 +5,8 @@ use Mojo::Base -base;
 
 use CHI;
 
-my $cache = CHI->new( driver => 'Memory', global => 1 );
+system("mkdir functions/cache_storage");
+my $cache = CHI->new( driver => 'File', root_dir => '/home/sergio/NYC-Scraper/functions/cache_storage');
 
 sub saveArticle ( $pages, @article ) {
 
