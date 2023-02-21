@@ -55,9 +55,6 @@ sub testTitle {
                 $testTitle = 0;
                 return ok($testTitle eq 1, "Crawl gives a valid article title");
                 };
-            say "Title";
-            say $title;
-            say "---";
       };
        ok($testTitle eq 1, "Crawl gives a valid article title");
     };
@@ -73,17 +70,32 @@ sub testComments {
                 $testComments = 0;
                 return ok($testComments eq 1, "Crawl gives valid article comments");
                 };
-            say "Comments";
-            say $comments;
-            say "---";
         };
         ok($testComments eq 1, "Crawl gives valid article comments");
     };
 };
+
+sub testScore {
+ my $testScore = 1;
+  for my $a ($arr[0]){
+         my $iterations = @$a;
+         for(my $i = 0; $i < $iterations; $i++){
+            my $score = @$a[$i] -> {score};
+            if($score =~ /[\d]/){}else{
+                $testScore = 0;
+                return ok($testScore eq 1, "Crawl gives valid article Score");
+                };
+        };
+        ok($testScore eq 1, "Crawl gives valid article score");
+    };
+};
+
+
+
 testURL();
 testTitle();
+testScore();
 testComments();
-
 
 
     # say "AREF: ";
