@@ -35,9 +35,7 @@ sub testURL {
         for(my $i = 0; $i < $iterations; $i++){
         my $url = @$a[$i] -> {url};
         if($url =~ /http/){}else{$isURL = 0};
-        say "URL";
-        say $url;
-        say "----";
+   
         }
     };
 ok($isURL eq 1, "Crawl gives a valid URL");
@@ -91,11 +89,28 @@ sub testScore {
 };
 
 
+sub testUser {
+ my $testUser = 1;
+  for my $a ($arr[0]){
+         my $iterations = @$a;
+         for(my $i = 0; $i < $iterations; $i++){
+            my $user = @$a[$i] -> {user};
+            if($user =~ /^.{3}/ | !$user){}else{
+                $testUser = 0;
+                return ok($testUser eq 1, "Crawl gives valid article User");
+                };
+        };
+        ok($testUser eq 1, "Crawl gives valid article User");
+    };
+};
+
+
 
 testURL();
 testTitle();
 testScore();
 testComments();
+testUser();
 
 
     # say "AREF: ";
