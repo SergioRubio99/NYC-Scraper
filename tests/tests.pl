@@ -104,6 +104,20 @@ sub testUser {
     };
 };
 
+sub testAge {
+ my $testAge = 1;
+  for my $a ($arr[0]){
+         my $iterations = @$a;
+         for(my $i = 0; $i < $iterations; $i++){
+            my $age = @$a[$i] -> {age};
+            if($age =~ /^[\d]\s(hour)||(minutes)$/ | !$age){}else{
+                $testAge = 0;
+                return ok($testAge eq 1, "Crawl gives valid article Age");
+                };
+        };
+        ok($testAge eq 1, "Crawl gives valid article Age");
+    };
+};
 
 
 testURL();
@@ -111,7 +125,7 @@ testTitle();
 testScore();
 testComments();
 testUser();
-
+testAge();
 
     # say "AREF: ";
     # for my $a ($arr[0]){
