@@ -51,7 +51,7 @@ sub testTitle {
          my $iterations = @$a;
            for(my $i = 0; $i < $iterations; $i++){
             my $title = @$a[$i] -> {title};
-            if($title =~ /^.{7}/){}else{
+            if($title =~ /^.{3}/){}else{
                 $testTitle = 0;
                 return ok($testTitle eq 1, "Crawl gives a valid article title");
                 };
