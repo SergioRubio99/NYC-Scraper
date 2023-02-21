@@ -63,10 +63,26 @@ sub testTitle {
     };
 };
 
-
+sub testComments {
+    my $testComments = 1;
+    for my $a ($arr[0]){
+         my $iterations = @$a;
+         for(my $i = 0; $i < $iterations; $i++){
+            my $comments = @$a[$i] -> {comments};
+            if($comments =~ /[\d]/){}else{
+                $testComments = 0;
+                return ok($testComments eq 1, "Crawl gives valid article comments");
+                };
+            say "Comments";
+            say $comments;
+            say "---";
+        };
+        ok($testComments eq 1, "Crawl gives valid article comments");
+    };
+};
 testURL();
 testTitle();
-
+testComments();
 
 
 
