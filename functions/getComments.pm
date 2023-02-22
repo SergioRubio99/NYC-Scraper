@@ -1,7 +1,7 @@
 package getComments;
 use Mojolicious::Lite -signatures;
 use Mojo::DOM;
-
+no warnings "uninitialized";
 
 sub getComments ($html_el) {
     if ( $html_el->next_node->at(".age")

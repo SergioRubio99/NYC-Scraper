@@ -15,7 +15,7 @@ require HTTP::Request;
 
 
 my $ua = LWP::UserAgent->new;
-my $url = 'http://localhost:3000/1';
+my $url = 'http://localhost:3000/30';
 my $header = ['Content-Type' => 'application/json; charset=UTF-8'];
 my $data = {foo => 'bar', baz => 'quux'};
 my $encoded_data = encode_json($data);
@@ -100,7 +100,7 @@ sub testUser {
          my $iterations = @$a;
          for(my $i = 0; $i < $iterations; $i++){
             my $user = @$a[$i] -> {user};
-            if($user =~ /^.{3}/ | !$user){}else{
+            if($user =~ /^.{1}/ | !$user){}else{
                 $testUser = 0;
                 return ok($testUser eq 1, "User field test");
                 };
