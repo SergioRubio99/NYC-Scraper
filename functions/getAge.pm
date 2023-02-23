@@ -1,6 +1,5 @@
 package getAge;
 use Mojolicious::Lite -signatures;
-use Mojo::DOM;
 
 
 sub getAge ($html_el) {

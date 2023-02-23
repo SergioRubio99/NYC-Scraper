@@ -4,7 +4,6 @@ BEGIN{
 
 package getPage;
 require functions::crawler;
-require functions::getDOM;
 use functions::cache;
 use Mojolicious::Lite -signatures;
 

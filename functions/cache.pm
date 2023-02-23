@@ -1,7 +1,6 @@
 package cache;
 use CHI;
 use Mojolicious::Lite -signatures;
-use Mojo::Base -base;
 
 use CHI;
 

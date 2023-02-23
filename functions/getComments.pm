@@ -1,6 +1,5 @@
 package getComments;
 use Mojolicious::Lite -signatures;
-use Mojo::DOM;
 no warnings "uninitialized";
 
 sub getComments ($html_el) {

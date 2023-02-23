@@ -3,7 +3,6 @@ BEGIN{
 }
 
 use strict;
-use warnings;
 use Mojolicious::Lite -signatures;
 use controllers::controller_methods::getPage;
 

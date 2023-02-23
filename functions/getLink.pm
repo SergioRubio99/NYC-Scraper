@@ -1,6 +1,5 @@
 package getLink;
 use Mojolicious::Lite -signatures;
-use Mojo::DOM;
 
 
 sub getLink ($html_el) {

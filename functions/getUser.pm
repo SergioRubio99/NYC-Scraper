@@ -1,6 +1,5 @@
 package getUser;
 use Mojolicious::Lite -signatures;
-use Mojo::DOM;
 
 sub getUser ($html_el) {
 

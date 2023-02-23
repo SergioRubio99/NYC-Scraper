@@ -5,7 +5,6 @@ BEGIN {
 
 package crawler;
 use Mojolicious::Lite -signatures;
-use Mojo::DOM;
 use Mojo::Base -base;
 use functions::getDOM;
 use functions::getUser;

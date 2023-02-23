@@ -1,6 +1,5 @@
 package getScore;
 use Mojolicious::Lite -signatures;
-use Mojo::DOM;
 
 
 sub getScore ($html_el) {
