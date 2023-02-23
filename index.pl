@@ -11,7 +11,7 @@ use controllers::controller;
 
 get "/:pages" => { pages => 1 } => sub ($c) {
     my $pages = $c->param('pages');
-    controller::api( $c, "Sebastien", $pages );
+    controller::api( $c, $pages );
     # $c -> render(text => "Hello !");
 };
 

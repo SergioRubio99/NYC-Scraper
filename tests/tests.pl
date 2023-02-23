@@ -2,10 +2,9 @@ BEGIN {
     system("perl ./index.pl daemon -l http://127.0.0.1:3000 &");
 };
 
-sleep(3);
+sleep(1);
 
 use Test2::V0;
-use feature "say";
 use LWP::UserAgent;
 use Scalar::Util qw(reftype);
 use JSON::MaybeXS qw(encode_json);
@@ -15,7 +14,7 @@ require HTTP::Request;
 
 
 my $ua = LWP::UserAgent->new;
-my $url = 'http://localhost:3000/30';
+my $url = 'http://localhost:3000/1';
 my $header = ['Content-Type' => 'application/json; charset=UTF-8'];
 my $data = {foo => 'bar', baz => 'quux'};
 my $encoded_data = encode_json($data);

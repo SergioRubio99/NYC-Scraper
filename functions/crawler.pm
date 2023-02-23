@@ -45,8 +45,7 @@ sub crawler ($pages) {
         "url" => getLink::getLink($e)
        );
 
-       say $article -> {age};
-        push( @articles_arr, {"title", $article -> title => "age", $article -> user => "user", $article -> user => "score", $article -> score => "comments", $article -> comments => "url", $article -> url} );
+        push( @articles_arr, {"title", $article -> title => "age", $article -> age => "user", $article -> user => "score", $article -> score => "comments", $article -> comments => "url", $article -> url} );
     }
 
     return ["PAGE $pages", @articles_arr];
