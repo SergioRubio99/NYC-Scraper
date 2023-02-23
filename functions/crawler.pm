@@ -13,10 +13,12 @@ use functions::getComments;
 use functions::getLink;
 use functions::getAge;
 use functions::getScore;
+use article;
 
 use Encode;
 
 sub crawler ($pages) {
+
     # my $object = article_constructor -> emit(1,2);
     # say $object;
     # say $object -> emit;
@@ -34,23 +36,17 @@ sub crawler ($pages) {
         my $title = Encode::decode_utf8 $e->at(".titleline")->at("a")->text;
  
         # my $score   = $e->next_node->at(".score")->text;
-        my @artHash = (
-            "title"    => $title,
-            "user"     => getUser::getUser($e),
-            "url"      => getLink::getLink($e),
-            "age"      => getAge::getAge($e),
-            "comments" => getComments::getComments($e),
-            "score"    => getScore::getScore($e)
-        );
+       my $article = article->new(
+        "age" => getAge::getAge($e),
+        "title" => $title,
+        "user" => getUser::getUser($e),
+        "score" => getScore::getScore($e),
+        "comments" => getComments::getComments($e),
+        "url" => getLink::getLink($e)
+       );
 
-        foreach my $entry ( values @artHash ) {
-
-            # say "";
-            # say $entry;
-            # say "";
-
-        }
-        push( @articles_arr, {@artHash} );
+       say $article -> {age};
+        push( @articles_arr, {"title", $article -> title => "age", $article -> user => "user", $article -> user => "score", $article -> score => "comments", $article -> comments => "url", $article -> url} );
     }
 
     return ["PAGE $pages", @articles_arr];
