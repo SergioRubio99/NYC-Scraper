@@ -1,7 +1,7 @@
 BEGIN {
   use Cwd qw(cwd);
   my $currentDir = cwd;
-  unshift @INC,$currentDir, 'functions','controllers/controller_methods','modules','/modules/Moose';
+  unshift @INC,$currentDir, 'functions','controllers/controller_methods';
   #@INC is the directory list, where perl searches for .pm files
 }
 
