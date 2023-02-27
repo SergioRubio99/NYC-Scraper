@@ -1,8 +1,7 @@
 package cache;
-use CHI;
 use Mojolicious::Lite -signatures;
+use modules::CHI;
 
-use CHI;
 
 system("mkdir functions/cache_storage");
 my $cache = CHI->new( driver => 'File', root_dir => '/home/sergio/NYC-Scraper/functions/cache_storage');

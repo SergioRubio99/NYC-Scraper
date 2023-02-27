@@ -1,8 +1,3 @@
-BEGIN {
-  unshift @INC,'/home/sergio/NYC-Scraper/';
-}
-
-
 package crawler;
 use Mojolicious::Lite -signatures;
 use Mojo::Base -base;

@@ -1,7 +1,3 @@
-BEGIN{
-  unshift @INC,'/home/sergio/NYC-Scraper/';
-}
-
 use strict;
 use Mojolicious::Lite -signatures;
 use controllers::controller_methods::getPage;

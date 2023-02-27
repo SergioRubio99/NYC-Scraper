@@ -1,13 +1,12 @@
 BEGIN {
-  unshift @INC,'/home/sergio/NYC-Scraper/functions';
-  unshift @INC,'/home/sergio/NYC-Scraper/';
-  unshift @INC,'controllers/controller_methods';
+  use Cwd qw(cwd);
+  my $currentDir = cwd;
+  unshift @INC,$currentDir, 'functions','controllers/controller_methods','modules','/modules/Moose';
   #@INC is the directory list, where perl searches for .pm files
 }
 
-
-use Mojolicious::Lite -signatures;
 use controllers::controller;
+use Mojolicious::Lite -signatures;
 
 get "/:pages" => { pages => 1 } => sub ($c) {
     my $pages = $c->param('pages');

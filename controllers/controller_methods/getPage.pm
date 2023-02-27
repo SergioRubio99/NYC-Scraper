@@ -1,7 +1,3 @@
-BEGIN{
-  unshift @INC,'/home/sergio/NYC-Scraper/';
-}
-
 package getPage;
 require functions::crawler;
 use functions::cache;
