@@ -21,6 +21,8 @@ On Arch, you can install it from the AUR: https://archlinux.org/packages/communi
 
 On Debian, you can install it via `apt`, with `sudo apt-get -y install cpanminus`
 
+If you get an error regarding `x86_64-linux-gnu-gcc`, in a Debian machine, I recommend installing the package `python2-dev`.
+
 Once it is installed on your system, download and install the modules, with `sudo cpanm Mojolicious::Lite CHI JSON::Parse Test2::V0 Moose`
 
 
