@@ -114,7 +114,7 @@ sub testAge {
          my $iterations = @$a;
          for(my $i = 0; $i < $iterations; $i++){
             my $age = @$a[$i] -> {age};
-            if($age =~ /^[\d]\s(hour)||(minutes)$/ | !$age){}else{
+            if($age =~ /(^\d{1,2}\shour)|(\d{1,2}\sminute)|(\d{1,2}\sday)/ | !$age){}else{
                 $testAge = 0;
                 return ok($testAge eq 1, "Age field test");
                 };
