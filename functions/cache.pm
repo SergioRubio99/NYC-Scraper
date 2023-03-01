@@ -7,7 +7,7 @@ system("mkdir functions/cache_storage");
 my $cache = CHI->new( driver => 'File', root_dir => 'functions/cache_storage');
 
 sub saveArticle ( $pages, @article ) {
-    $cache->set( $pages, @article, "3 minute" );
+    $cache->set( $pages, @article, "5 minute" );
 }
 
 sub getArticle ($pages) {
