@@ -7,7 +7,20 @@ This is a web scraper of the website https://news.ycombinator.com/, made with Pe
 
 <h1>Set up:</h1>
 
-To run it, you will need to have a functioning Linux install, with Perl and the following modules: 
+### Using Docker:
+
+Use the following command, in the project folder, to build the image:
+ - `docker image build -t nodescraper .`
+ <br>
+ 
+Use the following command to run the image on the 3000 port:
+<br>
+- ` docker container run --rm -it -p 3000:3000 --name node nodescraper `
+
+
+### Without using a container service:
+
+Dependencies: 
 
 - Mojolicious::Lite
 - CHI
@@ -21,9 +34,9 @@ On Arch, you can install it from the AUR: https://archlinux.org/packages/communi
 
 On Debian, you can install it via `apt`, with `sudo apt-get -y install cpanminus`
 
-If you get an error regarding `x86_64-linux-gnu-gcc`, in a Debian machine, I recommend installing the package `python2-dev`.
+If you get an error regarding `x86_64-linux-gnu-gcc`, in a Debian-based machine, I recommend installing the package `build-essential`.
 
-Once it is installed on your system, download and install the modules, with `sudo cpanm Mojolicious::Lite CHI JSON::Parse Test2::V0 Moose`
+Once it is installed on your system, you can download and install the modules, with `cpanm Mojolicious::Lite CHI JSON::Parse Test2::V0 Moose`
 
 
 <h1>Run:</h1>
