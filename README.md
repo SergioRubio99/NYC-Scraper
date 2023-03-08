@@ -49,6 +49,8 @@ The app uses a local cache, stored locally during the time of execution, and del
 
 <h1>Testing</h1>
 
+To run the test, run `tests/tests.pl` with `perl tests/tests.pl` in the main project directory.
+
 The app was developed with some tests in mind. They are located inside the `tests`folder, and they lift their own server instance so there's no need to launch the app when running them. 
 
 They test, in every article given:
