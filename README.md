@@ -15,7 +15,7 @@ Use the following command, in the project folder, to build the image:
  
 Use the following command to run the image on the 3000 port:
 <br>
-- ` docker container run --rm -it -p 3000:3000 --name node perlscraper `
+- ` docker container run --rm -it -p 3000:3000 --name perlscraper perlscraper `
 
 
 ### Without using a container service:
