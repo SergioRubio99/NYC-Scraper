@@ -10,12 +10,12 @@ This is a web scraper of the website https://news.ycombinator.com/, made with Pe
 ### Using Docker:
 
 Use the following command, in the project folder, to build the image:
- - `docker image build -t nodescraper .`
+ - `docker image build -t perlscraper .`
  <br>
  
 Use the following command to run the image on the 3000 port:
 <br>
-- ` docker container run --rm -it -p 3000:3000 --name node nodescraper `
+- ` docker container run --rm -it -p 3000:3000 --name node perlscraper `
 
 
 ### Without using a container service:
